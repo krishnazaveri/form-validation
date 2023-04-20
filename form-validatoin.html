@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+</head>
+<body>
+    <form action="">
+        Name : <input type="text" id="nm"><br><br>
+        Mobile : <input type="text" id="mb"><br><br>
+        Password : <input type="text" id="pass"><br><br>
+        Confirm Password : <input type="text" id="cpass"><br><br>
+
+        <button onclick="return abc()">Submit</button>
+
+        <script>
+            name = document.getElementById('nm');
+            mobile = document.getElementById('mb');
+            pass = document.getElementById('pass');
+            cpass = document.getElementById('cpass');
+
+            nm_ex = /^[a-zA-z]+$/;
+            mb_ex =/^[0-9]{10}$/;
+
+            function abc ()
+            {
+                if(name.value == "");
+                {
+                    alert("Name required");
+                    return;
+                }
+
+                if(!nm_ex.value(name.value))
+                {
+                    alert("Only letters");
+                    return ;
+
+                }
+
+                if(mobile.value =="");
+                {
+                    alert("Mobile required.");
+                    return;
+                }
+
+                if(!mb_ex.value(mobile.value))
+                {
+                    alert("10 degits only");
+                    return;
+                }
+            }
+
+        </script>
+    </form>
+</body>
+</html>
